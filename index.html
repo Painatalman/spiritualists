@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="dist/Spiritualist.js"></script>
+    </head>
+    <body>
+        <p id="quote"></p>
+        <button id="quotebutton">Get Quote</button>
+        <script>
+            var spiritualist = new Spiritualist();
+            
+            var quoteElement = window.quote; // weirdo trick
+            window.quotebutton.onclick = function () {
+                quoteElement.innerHTML = spiritualist.getRandomSpiritualist();
+            }
+            
+            window.quotebutton.click();
+        </script>
+    </body>
+</html>
