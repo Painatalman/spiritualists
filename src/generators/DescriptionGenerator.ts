@@ -1,7 +1,7 @@
-import ContentGenerator from "~/generators/ContentGenerator";
-import getRandom from "~/utils/getRandom";
-import IRandomGenerator from "~/interfaces/IRandomGenerator";
-import parseContentCode from "~/utils/parseContentCode";
+import ContentGenerator from '~/generators/ContentGenerator';
+import getRandom from '~/utils/getRandom';
+import IRandomGenerator from '~/interfaces/IRandomGenerator';
+import parseContentCode from '~/utils/parseContentCode';
 
 function getTemplateCodes(template: string): string[] {
   return [...template.matchAll(/\$[a-zA-Z]+\#\d+/g)].map(
@@ -18,7 +18,7 @@ async function getUpdatedTemplate(
     codes.map(async (code) => {
       const contentOptions = parseContentCode(code);
       const randomContent = await contentGenerator.getRandom(contentOptions);
-      return randomContent.join(", ");
+      return randomContent.join(', ');
     })
   );
 
@@ -30,7 +30,7 @@ async function getUpdatedTemplate(
 }
 
 function getUpdateTemplateWithName(template: string, name: string) {
-  return template.replaceAll("$_name", name.toUpperCase());
+  return template.replace(/\$_name/g, name.toUpperCase());
 }
 
 type Parameters = {
@@ -45,7 +45,7 @@ class DescriptionGenerator implements IRandomGenerator<string> {
     this.templates = templates;
     this.contentGenerator = contentGenerator;
   }
-  async generateRandom(name = "PROFESSOR BAMBO"): Promise<string> {
+  async generateRandom(name = 'PROFESSOR BAMBO'): Promise<string> {
     let output = getRandom(this.templates);
     const { contentGenerator } = this;
     output = getUpdateTemplateWithName(output, name);

@@ -17,8 +17,13 @@ export default function Home() {
 
         {!loading && !error && (
           <article className="p-4 rounded-none max-w-sm shadow mb-8">
-            <header className="font-black uppercase text-2xl text-center mb-2">
-              {spiritualist.name}
+            <header>
+              <div className="font-black uppercase text-2xl text-center">
+                {spiritualist.name}
+              </div>
+              <div className="font-bold uppercase text-center bg-black text-white">
+                Telf: 999 999 999 - 999 999 999
+              </div>
             </header>
             <p className="text-sm text-justify">{spiritualist.description}</p>
           </article>
