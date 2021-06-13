@@ -1,5 +1,7 @@
-import { server } from '~/msw/server';
-
+import { server } from './src/msw/server';
+require('dotenv').config({
+  path: './.env.development',
+});
 require('@testing-library/jest-dom');
 
 // Establish API mocking before all tests.

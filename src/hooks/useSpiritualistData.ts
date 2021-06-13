@@ -6,6 +6,8 @@ type SpiritualistData = {
   description: string;
 };
 
+const apiUrl = process.env.NEXT_PUBLIC_API_HOST;
+
 function useSpiritualistData() {
   const [name, setName] = useState(null);
   const [description, setDescription] = useState(null);
@@ -13,16 +15,14 @@ function useSpiritualistData() {
   const [error, setError] = useState(false);
 
   useEffect(function loadName() {
-    axios
-      .get('http://localhost:3000/api/name')
-      .then(({ data }) => setName(data));
+    axios.get(`${apiUrl}name`).then(({ data }) => setName(data));
   }, []);
 
   useEffect(
     function loadDescription() {
       if (!name) return;
       axios
-        .get('http://localhost:3000/api/description', {
+        .get(`${apiUrl}description`, {
           params: {
             name,
           },
