@@ -1,9 +1,7 @@
 import Head from 'next/head';
-import useSpiritualistData from '~/hooks/useSpiritualistData';
+import SpiritualistRandomizer from '~/components/SpiritualistRandomizer';
 
 export default function Home() {
-  const { loading, error, spiritualist } = useSpiritualistData();
-
   return (
     <>
       <Head>
@@ -14,20 +12,7 @@ export default function Home() {
 
       <main className=" p-8 flex items-center justify-center flex-col">
         <h1 className="mb-6 text-xs">Espiritualista de exemplo</h1>
-
-        {!loading && !error && (
-          <article className="p-4 rounded-none max-w-sm shadow mb-8">
-            <header>
-              <div className="font-black uppercase text-2xl text-center">
-                {spiritualist.name}
-              </div>
-              <div className="font-bold uppercase text-center bg-black text-white">
-                Telf: 999 999 999 - 999 999 999
-              </div>
-            </header>
-            <p className="text-sm text-justify">{spiritualist.description}</p>
-          </article>
-        )}
+        <SpiritualistRandomizer />
         <footer className="flex items-center content-center text-xs">
           por mim!
         </footer>
