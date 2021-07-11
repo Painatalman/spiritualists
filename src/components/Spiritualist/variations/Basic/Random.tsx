@@ -1,7 +1,6 @@
 import useSpiritualistData from '~/hooks/useSpiritualistData';
-import Spiritualist from '~/components/Spiritualist';
-import ErrorSpiritualist from '~/components/Spiritualist/Error';
-import LoadingSpiritualist from '~/components/Spiritualist/Loading';
+import Spiritualist from '~/components/Spiritualist/variations/Basic/template';
+import { Error, Loading } from '~/components/Spiritualist/variations/Basic';
 
 function RandomSpiritualist() {
   const [error, spiritualist] = useSpiritualistData();
@@ -12,9 +11,9 @@ function RandomSpiritualist() {
       description={spiritualist.description}
     />
   ) : error ? (
-    <ErrorSpiritualist />
+    <Error />
   ) : (
-    <LoadingSpiritualist />
+    <Loading />
   );
 }
 

@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,17 +19,9 @@
     "outDir": "dist",
     "sourceMap": true,
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["src/*"]
     }
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src/**/*",
-    "next-env.d.ts",
-    "postcss.config.js"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "next-env.d.ts", "postcss.config.js"]
 }

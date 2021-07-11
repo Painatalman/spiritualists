@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import RandomSpiritualist from '~/components/Spiritualist/Random';
+import RandomSpiritualist from '~/components/Spiritualist/variations/Basic/Random';
 import { rest } from 'msw';
 import { server } from '~/msw/server';
 
-jest.mock('~/components/Spiritualist/Loading', () => () => (
+jest.mock('~/components/Spiritualist/variations/Basic/Loading', () => () => (
   <div data-testid="loading"></div>
 ));
-jest.mock('~/components/Spiritualist/Error', () => () => (
+jest.mock('~/components/Spiritualist/variations/Basic/Error', () => () => (
   <div data-testid="error"></div>
 ));
-jest.mock('~/components/Spiritualist', () => () => (
+jest.mock('~/components/Spiritualist/variations/Basic/template', () => () => (
   <div data-testid="spiritualist"></div>
 ));
 

@@ -9,12 +9,19 @@ describe('SpiritualistRandomizer', () => {
   it('displays a spiritualist and a button', async () => {
     server.use(
       rest.get(`${apiUrl}name`, (_req, res, ctx) =>
-        res(ctx.status(200), ctx.json('Test name'))
+        res(ctx.delay(20), ctx.status(200), ctx.json('Test name'))
       ),
       rest.get(`${apiUrl}description`, (_req, res, ctx) =>
         res(ctx.status(200), ctx.json('Test description'))
-      )
+      ),
+      rest.get(`${apiUrl}title`, (req, res, ctx) => {
+        return res(
+          ctx.status(200),
+          ctx.json(['TitleTop', 'TitleBottomLeft', 'TitleBottomRight'])
+        );
+      })
     );
+
     render(<SpiritualistRandomizer />);
 
     await screen.findByText('Test description');
@@ -36,7 +43,13 @@ describe('SpiritualistRandomizer', () => {
       ),
       rest.get(`${apiUrl}description`, (_req, res, ctx) =>
         res(ctx.status(200), ctx.json('New test description'))
-      )
+      ),
+      rest.get(`${apiUrl}title`, (req, res, ctx) => {
+        return res(
+          ctx.status(200),
+          ctx.json(['TitleTop', 'TitleBottomLeft', 'TitleBottomRight'])
+        );
+      })
     );
 
     render(<SpiritualistRandomizer />);

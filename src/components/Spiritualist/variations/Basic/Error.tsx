@@ -1,4 +1,4 @@
-import Spiritualist from '~/components/Spiritualist';
+import Spiritualist from './template';
 
 function ErrorSpiritualist() {
   return (

@@ -1,12 +1,18 @@
+import HeartIcon from '~/components/Icon/Heart';
+
 type Props = {
   name: string;
   description: string;
 };
 
-const Spiritualist: React.FC<Props> = ({ name, description }: Props) => (
+const SpiritualistTemplate: React.FC<Props> = ({ name, description }: Props) => (
   <article className="p-4 rounded-none max-w-sm shadow mb-8 border-2  border-solid border-black">
     <header>
-      <h2 className="font-black uppercase text-2xl text-center">{name}</h2>
+      <div className="flex justify-between align-center">
+        <HeartIcon />
+        <h2 className="font-black uppercase text-2xl text-center">{name}</h2>
+        <HeartIcon />
+      </div>
       <div className="font-bold text-center bg-black text-white">
         Telf: 999 999 999 - 999 999 999
       </div>
@@ -19,4 +25,4 @@ const Spiritualist: React.FC<Props> = ({ name, description }: Props) => (
   </article>
 );
 
-export default Spiritualist;
+export default SpiritualistTemplate;

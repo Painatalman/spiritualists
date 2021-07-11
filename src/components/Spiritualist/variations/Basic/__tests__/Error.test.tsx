@@ -1,9 +1,9 @@
 import { screen, render } from '@testing-library/react';
-import ErrorSpiritualist from '~/components/Spiritualist/Error';
+import { Error } from '~/components/Spiritualist/variations/Basic';
 
 describe('Error Spiritualist', () => {
   it('has expected name and description', () => {
-    render(<ErrorSpiritualist />);
+    render(<Error />);
 
     screen.getByText('Professor ERRO');
   });

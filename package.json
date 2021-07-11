@@ -12,6 +12,7 @@
   "author": "Painatalman",
   "license": "ISC",
   "dependencies": {
+    "@react-spring/web": "^9.2.3",
     "axios": "^0.21.1",
     "next": "10.2.3",
     "react": "17.0.2",

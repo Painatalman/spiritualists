@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react';
-import LoadingSpiritualist from '~/components/Spiritualist/Loading';
+import LoadingSpiritualist from '~/components/Spiritualist/variations/Basic/Loading';
 
 describe('Loading Spiritualist', () => {
   it('has expected name and description', () => {
