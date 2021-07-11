@@ -4,9 +4,9 @@ Display a random spiritualist for fun, at [Espiritualista Aleatório](https://ww
 
 ## API
 
-**endpoint**: <https://www.espiritualista-aleatorio-vercel.app/api>
+**endpoint**: <https://espiritualista-aleatorio.vercel.app/api>
 
-- random name: `/name`
-- random description: `/descriptions`
-- random titles: `/title`
+- [random name](https://espiritualista-aleatorio.vercel.app/api/name): `/name`
+- [random description](https://espiritualista-aleatorio.vercel.app/api/name): `/description`
+- [random titles](https://espiritualista-aleatorio.vercel.app/api/title): `/title`
   - with quantity (1 or above): `/title?quantity=3`
